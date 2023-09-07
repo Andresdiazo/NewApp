@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct PostDataInputView: View {
+struct StorageView: View {
     @Binding var name: String
     @Binding var selectedCategory: String
     @Binding var selectedColor: String
@@ -174,7 +174,7 @@ struct ContentView: View {
             )
         }
         .sheet(isPresented: $showPostDataInput) {
-            PostDataInputView(name: $name, selectedCategory: $selectedCategory, selectedColor: $selectedColor)
+            StorageView(name: $name, selectedCategory: $selectedCategory, selectedColor: $selectedColor)
                 .onDisappear {
                     Task {
                         await viewModel.getPosts()
